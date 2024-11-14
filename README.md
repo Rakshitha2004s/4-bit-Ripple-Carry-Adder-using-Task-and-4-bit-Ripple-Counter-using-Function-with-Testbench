@@ -96,6 +96,11 @@ Output;
 ![image](https://github.com/user-attachments/assets/a7a0d3e6-6e2c-4185-8b91-cd151a320c14)
 
 
+
+
+
+
+
 // Verilog Code ripple counter
 
 ```
