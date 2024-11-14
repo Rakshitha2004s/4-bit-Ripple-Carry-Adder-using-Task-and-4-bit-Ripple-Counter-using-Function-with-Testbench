@@ -42,7 +42,7 @@ Verilog HDL compiler.
 
     assign Sum = sum_temp;
 
-endmodule```
+endmodule
 
 
 // Test bench for Ripple carry adder
