@@ -10,7 +10,8 @@ Verilog HDL compiler.
 
 # Verilog Code
 
-module ripple_carry_adder_4bit (
+
+```module ripple_carry_adder_4bit (
     input [3:0] A,      // 4-bit input A
     input [3:0] B,      // 4-bit input B
     input Cin,          // Carry input
@@ -41,7 +42,7 @@ module ripple_carry_adder_4bit (
 
     assign Sum = sum_temp;
 
-endmodule
+endmodule```
 
 
 // Test bench for Ripple carry adder
