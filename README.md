@@ -10,7 +10,8 @@ Verilog HDL compiler.
 
 # Verilog Code
 
-```module ripple_adders (
+```
+module ripple_adders (
     input [3:0] A, 
     input [3:0] B, 
     input Cin, 
@@ -41,10 +42,12 @@ Verilog HDL compiler.
     assign Sum = sum_temp;
     assign Cout = cout_final;
 
-endmodule```
+endmodule
+```
 
 // Test bench for Ripple carry adder
 
+```
 module ripple_carry_adder_4bit_tb;
 
     reg [3:0] A, B;
@@ -86,6 +89,7 @@ module ripple_carry_adder_4bit_tb;
     end
 
 endmodule
+```
 
 Output;
 
@@ -94,6 +98,7 @@ Output;
 
 // Verilog Code ripple counter
 
+```
 module ripple_counter_4bit (
     input clk,           // Clock signal
     input reset,         // Reset signal
@@ -117,9 +122,11 @@ module ripple_counter_4bit (
     end
 
 endmodule
+```
 
 // TestBench
 
+```
 module ripple_counter_4bit_tb;
 
     reg clk;
@@ -153,6 +160,7 @@ module ripple_counter_4bit_tb;
     end
 
 endmodule
+```
 
 Output:
 
