@@ -10,40 +10,38 @@ Verilog HDL compiler.
 
 # Verilog Code
 
-
-```module ripple_carry_adder_4bit (
-    input [3:0] A,      // 4-bit input A
-    input [3:0] B,      // 4-bit input B
-    input Cin,          // Carry input
-    output [3:0] Sum,   // 4-bit Sum output
-    output Cout         // Carry output
+```module ripple_adders (
+    input [3:0] A, 
+    input [3:0] B, 
+    input Cin, 
+    output [3:0] Sum, 
+    output Cout
 );
 
     reg [3:0] sum_temp;
     reg cout_temp;
+    reg cout_final;
 
-    // Task for Full Adder
     task full_adder;
         input a, b, cin;
         output sum, cout;
-        begin
-            sum = a ^ b ^ cin;
-            cout = (a & b) | (b & cin) | (cin & a);
-        end
+    begin
+        sum = a ^ b ^ cin;
+        cout = (a & b) | (b & cin) | (cin & a);
+    end
     endtask
 
-    // Ripple carry logic using task
     always @(*) begin
         full_adder(A[0], B[0], Cin, sum_temp[0], cout_temp);
         full_adder(A[1], B[1], cout_temp, sum_temp[1], cout_temp);
         full_adder(A[2], B[2], cout_temp, sum_temp[2], cout_temp);
-        full_adder(A[3], B[3], cout_temp, sum_temp[3], Cout);
+        full_adder(A[3], B[3], cout_temp, sum_temp[3], cout_final);
     end
 
     assign Sum = sum_temp;
+    assign Cout = cout_final;
 
-endmodule
-
+endmodule```
 
 // Test bench for Ripple carry adder
 
